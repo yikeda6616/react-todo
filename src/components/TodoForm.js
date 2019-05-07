@@ -4,12 +4,12 @@ const TodoForm = props => {
   return (
     <form className='panel-block' onSubmit={props.addTodo}>
       <input
-        class='input'
+        className='input'
         type='text'
         value={props.item}
         onChange={props.updateItem}
       />
-      <input class='button is-primary' type='submit' value='Add Todo' />
+      <input className='button is-primary' type='submit' value='Add Todo' />
     </form>
   );
 };
