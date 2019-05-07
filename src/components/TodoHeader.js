@@ -5,12 +5,20 @@ const TodoHeader = props => {
     return !todo.isDone;
   });
   return (
-    <h1>
-      <button onClick={props.purge}>Purge</button>
+    <h1 className='panel-heading'>
       My Todos
       <span>
         ({remaining.length}/{props.todos.length})
       </span>
+      <button
+        onClick={props.purge}
+        className='button is-small is-danger is-outlined is-pulled-right'
+      >
+        <span>Purge</span>
+        <span className='icon is-small'>
+          <i className='fas fa-times' />
+        </span>
+      </button>
     </h1>
   );
 };

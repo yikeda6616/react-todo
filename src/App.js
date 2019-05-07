@@ -90,9 +90,7 @@ class App extends React.Component {
       return;
     }
 
-    const todos = this.state.todos.filter(todo => {
-      return !todo.isDone;
-    });
+    const todos = this.state.todos.filter(todo => !todo.isDone);
 
     this.setState({
       todos: todos
@@ -112,17 +110,21 @@ class App extends React.Component {
   render() {
     return (
       <div className='container'>
-        <TodoHeader todos={this.state.todos} purge={this.purge} />
-        <TodoList
-          checkTodo={this.checkTodo}
-          deleteTodo={this.deleteTodo}
-          todos={this.state.todos}
-        />
-        <TodoForm
-          item={this.state.item}
-          updateItem={this.updateItem}
-          addTodo={this.addTodo}
-        />
+        <div className='columns is-centered'>
+          <div className='panel column is-half'>
+            <TodoHeader todos={this.state.todos} purge={this.purge} />
+            <TodoList
+              checkTodo={this.checkTodo}
+              deleteTodo={this.deleteTodo}
+              todos={this.state.todos}
+            />
+            <TodoForm
+              item={this.state.item}
+              updateItem={this.updateItem}
+              addTodo={this.addTodo}
+            />
+          </div>
+        </div>
       </div>
     );
   }

@@ -2,8 +2,8 @@ import React from 'react';
 
 const TodoItem = props => {
   return (
-    <li>
-      <label>
+    <a className='panel-block'>
+      <label className='checkbox'>
         <input
           type='checkbox'
           checked={props.todo.isDone}
@@ -16,10 +16,13 @@ const TodoItem = props => {
         </span>
       </label>
 
-      <span className='cmd' onClick={() => props.deleteTodo(props.todo)}>
-        [x]
+      <span
+        className='cmd panel-icon'
+        onClick={() => props.deleteTodo(props.todo)}
+      >
+        <i className='fas fa-trash-alt' />
       </span>
-    </li>
+    </a>
   );
 };
 

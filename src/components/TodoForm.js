@@ -2,9 +2,14 @@ import React from 'react';
 
 const TodoForm = props => {
   return (
-    <form onSubmit={props.addTodo}>
-      <input type='text' value={props.item} onChange={props.updateItem} />
-      <input type='submit' value='Add' />
+    <form className='panel-block' onSubmit={props.addTodo}>
+      <input
+        class='input'
+        type='text'
+        value={props.item}
+        onChange={props.updateItem}
+      />
+      <input class='button is-primary' type='submit' value='Add Todo' />
     </form>
   );
 };
